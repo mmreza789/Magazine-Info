@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شناسنامه مجله</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: 'DAMOON';
+            src: url('DAMOON.woff') format('woff');
+            font-weight: Medium;
+            font-style: Medium;
+        }
+        
+        :root {
+            --primary: #0f162d;
+            --accent: #c5a579;
+            --font-size: 1rem;
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: white;
+            font-family: 'DAMOON', Tahoma, sans-serif;
+            overflow-x: hidden;
+            font-size: var(--font-size);
+        }
+        
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(135deg, #0f162d 0%, #1a2a4a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        .scroll-down-btn {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 60px;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(197, 165, 121, 0.4);
+        }
+        
+        .scroll-down-btn:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 8px 20px rgba(197, 165, 121, 0.6);
+        }
+        
+        .scroll-down-btn:active {
+            transform: translateX(-50%) scale(0.98);
+        }
+        
+        .scroll-down-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%, -50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .scroll-down-btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        .team-section {
+            padding: 80px 0;
+            background-color: var(--primary);
+        }
+        
+        .profile-card {
+            background: #1a2238;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        
+        .profile-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 35px rgba(197, 165, 121, 0.3);
+        }
+        
+        .profile-img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-card:hover .profile-img {
+            transform: scale(1.05);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-2 {
+            animation: float 5s ease-in-out infinite 1s;
+        }
+        
+        .font-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(26, 34, 56, 0.8);
+            border-radius: 30px;
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .font-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .font-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 1;
+            }
+            20% {
+                transform: scale(25, 25);
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(40, 40);
+            }
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(197, 165, 121, 0.6);
+            pointer-events: none;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(197, 165, 121, 0.7);
+        }
+        
+        .accent-text {
+            color: var(--accent);
+        }
+        
+        .accent-bg {
+            background-color: var(--accent);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            border-radius: 3px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #1a2238 0%, #0f162d 100%);
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            animation: footerGlow 3s ease-in-out infinite alternate;
+        }
+
+        .contact-card {
+            background: rgba(26, 34, 56, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 165, 121, 0.2);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        .contact-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover::after {
+            width: 100%;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(197, 165, 121, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        @keyframes footerGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(197, 165, 121, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(197, 165, 121, 0.7);
+            }
+        }
+
+        .wave {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%231a2238" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%231a2238" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a2238"/></svg>');
+            background-size: 1200px 50px;
+            animation: wave 15s linear infinite;
+        }
+
+        @keyframes wave {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 1200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center justify-center relative">
+        <!-- Floating particles -->
+        <div id="particles"></div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-1/4 left-1/4 w-16 h-16 rounded-full bg-gradient-to-br from-[#c5a579] to-[#e8c99b] opacity-20 floating"></div>
+        <div class="absolute top-1/3 right-1/3 w-24 h-24 rounded-full bg-gradient-to-br from-[#c5a579] to-[#e8c99b] opacity-15 floating-2"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-20 h-20 rounded-full bg-gradient-to-br from-[#c5a579] to-[#e8c99b] opacity-10 floating"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="hero-content text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 glow-text">
+                    تیم <span class="accent-text">مجله</span> 313
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+                    با اعضای متخصص و با استعداد ما آشنا شوید که هر روز مرزهای نوآوری را جابجا می‌کنند!به مولا
+                </p>
+                <div class="flex justify-center gap-4">
+                    <div class="w-16 h-1 accent-bg"></div>
+                    <div class="w-8 h-1 accent-bg"></div>
+                    <div class="w-4 h-1 accent-bg"></div>
+                </div>
+            </div>
+        </div>
+        
+        <button id="scrollDownBtn" class="scroll-down-btn">
+            مشاهده اعضا
+            <i class="fas fa-chevron-down mr-2"></i>
+        </button>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">
+                    اعضای <span class="accent-text">تیم</span> ما
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+            </div>
+            
+            <div class="team-grid">
+                <!--Bahman Zangeneh-->
+                <div class="profile-card">
+                    <a href="Bahman Zangeneh.html">
+                        <div class="relative overflow-hidden">
+                            <img src="Bahman Zangeneh.jpg" 
+                                 alt="بهمن زنگنه
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">بهمن زنگنه</h3>
+                            <p class="text-gray-400 mb-4">سردبیر </p>
+                            <p class="text-gray-300 mb-4">
+                                مدیر هنری و سردبیر مجله
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">مدیریت فنی</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">تیم‌سازی</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- mmreza -->
+                <div class="profile-card">
+                    <a href="mmreza.html">
+                        <div class="relative overflow-hidden">
+                            <img src="mmreza.jpg" 
+                                 alt="محمدرضا زارعی
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">محمدرضا زارعی</h3>
+                            <p class="text-gray-400 mb-4">صفحه آرا</p>
+                            <p class="text-gray-300 mb-4">
+                                تایپوگرافر، طراح گرافیک، طراح UI و هویت بصری
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">طراح گرافیک</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">تایپوگرافر</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">طراح uiوux</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Agha Mohammad -->
+                <div class="profile-card">
+                    <a href="Agha Mohammad.html">
+                        <div class="relative overflow-hidden">
+                            <img src="Agha Mohammad.jpg" 
+                                 alt="محمدصالح نوروزی
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">محمدصالح نوروزی</h3>
+                            <p class="text-gray-400 mb-4">عکاس</p>
+                            <p class="text-gray-300 mb-4">
+                                عکاس مستند
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Farhan -->
+                <div class="profile-card">
+                    <a href="farhan.html">
+                        <div class="relative overflow-hidden">
+                            <img src="farhan.jpg" 
+                                 alt="فرهان اشرفان
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">فرهان اشرفیان</h3>
+                            <p class="text-gray-400 mb-4">عکاس</p>
+                            <p class="text-gray-300 mb-4">
+                                عکاس تبلیغاتی با تجربه در ژانرهای متنوع
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس تبلیغاتی</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس مستند</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Ali Asghar -->
+                <div class="profile-card">
+                    <a href="Ali Asghar.html">
+                        <div class="relative overflow-hidden">
+                            <img src="Ali Asghar.jpg" 
+                                 alt="علی‌اصغر کیانی
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">علی‌اصغر کیانی</h3>
+                            <p class="text-gray-400 mb-4">خبرنگار</p>
+                            <p class="text-gray-300 mb-4">
+                                بازیگر تئاتر
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">بازیگر</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Arshia -->
+                <div class="profile-card">
+                    <a href="arshia.html">
+                        <div class="relative overflow-hidden">
+                            <img src="arshia.jpg" 
+                                 alt="عرشیا عسگری 
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">عرشیا عسگری</h3>
+                            <p class="text-gray-400 mb-4">عکاس</p>
+                            <p class="text-gray-300 mb-4">
+                                عکاس با تمرکز بر عکاسی تبلیغاتی
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس تبیغاتی</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">طراح گرافیک</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">ناظر چاپ</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Yasin -->
+                <div class="profile-card">
+                    <a href="yasin.html">
+                        <div class="relative overflow-hidden">
+                            <img src="Yasin.jpg" 
+                                 alt="یاسین جعفری
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">یاسین جعفری</h3>
+                            <p class="text-gray-400 mb-4">طراح گرافیک</p>
+                            <p class="text-gray-300 mb-4">عالب
+                                طراح گرافیک، کاراکتر و علاقه‌مند به انیمیشن
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">طراح گرافیک</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">تصویر ساز</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Amir Doosti -->
+                <div class="profile-card">
+                    <a href="Amir Doosti.html">
+                        <div class="relative overflow-hidden">
+                            <img src="Amir Doosti.jpg" 
+                                 alt="امیر دوستی
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">امیر دوستی</h3>
+                            <p class="text-gray-400 mb-4">طراح گرافیک</p>
+                            <p class="text-gray-300 mb-4">
+                                طراح گرافیک
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">لوگو تایپ</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Iliya -->
+                <div class="profile-card">
+                    <a href="iliya.html">
+                        <div class="relative overflow-hidden">
+                            <img src="Iliya.jpg" 
+                                 alt="ایلیا وحیدی
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">ایلیا وحیدی</h3>
+                            <p class="text-gray-400 mb-4">نظارت بر چاپ</p>
+                            <p class="text-gray-300 mb-4">
+                                طراح گرافیک با ذهنی موسیقایی
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">طراح گرافیک</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">ناظر چاپ</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ali nurani -->
+                <div class="profile-card">
+                    <a href="ali nurani.html">
+                        <div class="relative overflow-hidden">
+                            <img src="ali nurani.jpg" 
+                                 alt="علی نورانی
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">علی نورانی</h3>
+                            <p class="text-gray-400 mb-4">عکاس</p>
+                            <p class="text-gray-300 mb-4">
+                                عکاس با نگاه چندژانری
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس مستند</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس پرتره</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس تبلیغاتی</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- pedram -->
+                <div class="profile-card">
+                    <a href="pedram.html">
+                        <div class="relative overflow-hidden">
+                            <img src="pedram.jpg" 
+                                 alt="پدرام رضایی
+                                 class="profile-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">پدرام رضایی</h3>
+                            <p class="text-gray-400 mb-4">عکاس</p>
+                            <p class="text-gray-300 mb-4">
+                                عکاس با نگاه شخصی و جست‌وجوگر
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="wave"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">
+                    <span class="accent-text">ارتباط</span> با ما
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    برای همکاری یا دریافت اطلاعات بیشتر با ما در تماس باشید
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ایمیل</h3>
+                    <a href="mailto:info@example.com" class="contact-link">info@example.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">تلفن</h3>
+                    <a href="tel:+982122223333" class="contact-link">021-22223333</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">آدرس</h3>
+                    <a href="https://balad.ir/p/%D9%87%D9%86%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%D9%87%D9%86%D8%B1-hamedan_school-5L1G3wYdAAYWIx?preview=true#15/34.77205/48.53149" 
+                       class="contact-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                       همدان، کوی دکتر چمران، بلوار محمدیه، خ سلحشور
+                    </a>                    
+                </div>
+            </div>
+
+<!-- آیکون‌ها -->
+<div class="flex justify-center gap-6 mb-12">
+    <a href="#" class="social-icon" onclick="showToast(event)">
+        <i class="fab fa-instagram text-2xl"></i>
+    </a>
+    <a href="#" class="social-icon" onclick="showToast(event)">
+        <i class="fab fa-telegram text-2xl"></i>
+    </a>
+    <a href="#" class="social-icon" onclick="showToast(event)">
+        <i class="fab fa-linkedin text-2xl"></i>
+    </a>
+    <a href="#" class="social-icon" onclick="showToast(event)">
+        <i class="fab fa-twitter text-2xl"></i>
+    </a>
+</div>
+
+<!-- toast نوتیفیکیشن در مرکز -->
+<div id="toast" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                     bg-gray-800 text-white text-lg px-6 py-4 rounded-2xl shadow-2xl 
+                     opacity-0 transition-opacity duration-500 pointer-events-none z-50">
+    نداریم!
+</div>
+
+<!-- اسکریپت -->
+<script>
+function showToast(event) {
+    event.preventDefault();
+    const toast = document.getElementById("toast");
+    toast.classList.remove("opacity-0");
+    toast.classList.add("opacity-100");
+    setTimeout(() => {
+        toast.classList.remove("opacity-100");
+        toast.classList.add("opacity-0");
+    }, 2000);
+}
+</script>
+                </a>
+            </div>
+
+            <div class="text-center text-gray-400 text-sm pb-6">
+                <p>© 2025 تمامی حقوق محفوظ است</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Size Controls -->
+    <div class="font-controls">
+        <button id="decreaseFont" class="font-btn" title="کاهش اندازه فونت">
+            <i class="fas fa-font"></i>
+        </button>
+        <button id="resetFont" class="font-btn" title="اندازه پیش‌فرض">
+            <i class="fas fa-text-height"></i>
+        </button>
+        <button id="increaseFont" class="font-btn" title="افزایش اندازه فونت">
+            <i class="fas fa-text-width"></i>
+        </button>
+    </div>
+
+    <script>
+        // Scroll to team section
+        document.getElementById('scrollDownBtn').addEventListener('click', function() {
+            document.getElementById('team').scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Animate the profile cards after scrolling
+            setTimeout(() => {
+                const profileCards = document.querySelectorAll('.profile-card');
+                profileCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 200);
+                });
+            }, 800);
+        });
+
+        // Font size controls
+        const decreaseFont = document.getElementById('decreaseFont');
+        const resetFont = document.getElementById('resetFont');
+        const increaseFont = document.getElementById('increaseFont');
+        
+        const minFontSize = 0.8; // 80% of original
+        const maxFontSize = 1.5; // 150% of original
+        const defaultFontSize = 1; // 100%
+        
+        function setFontSize(size) {
+            document.documentElement.style.setProperty('--font-size', size + 'rem');
+        }
+        
+        decreaseFont.addEventListener('click', () => {
+            const currentSize = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--font-size'));
+            if (currentSize > minFontSize) {
+                setFontSize(currentSize - 0.1);
+            }
+        });
+        
+        resetFont.addEventListener('click', () => {
+            setFontSize(defaultFontSize);
+        });
+        
+        increaseFont.addEventListener('click', () => {
+            const currentSize = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--font-size'));
+            if (currentSize < maxFontSize) {
+                setFontSize(currentSize + 0.1);
+            }
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animation = `float ${duration}s ease-in-out infinite ${delay}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Initialize particles
+        createParticles();
+        
+        // Animate profile cards when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.profile-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Animate contact cards when they come into view
+        const contactObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.contact-card').forEach(card => {
+            contactObserver.observe(card);
+        });
+    </script>
+</body>
+</html>

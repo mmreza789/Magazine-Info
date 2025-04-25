@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علی نورانی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f162d',
+                        secondary: '#c5a579',
+                        accent: '#e8c897',
+                    },
+                    fontFamily: {
+                        'DAMOON': ['DAMOON', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 5s infinite',
+                        'fade-in': 'fadeIn 1.5s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      @font-face {
+        font-family: 'DAMOON';
+          src: url('DAMOON.woff') format('woff'),
+      }
+      :root {
+            --primary: #0f162d;
+            --accent: #c5a579;
+            --font-size: 1rem;
+        }
+      html {
+          font-size: 16px;
+          scroll-behavior: smooth;
+      }
+  
+      @media (min-width: 640px) {
+          html {
+              font-size: 17px;
+          }
+      }
+  
+      @media (min-width: 1024px) {
+          html {
+              font-size: 18px;
+          }
+      }
+  
+      @media (min-width: 1280px) {
+          html {
+              font-size: 19px;
+          }
+      }
+      
+      body {
+          font-family: 'DAMOON', 'Noto Nastaliq Urdu', serif;
+          background: linear-gradient(135deg, #0f162d 0%, #21283a 100%);
+      }
+  
+      
+      .profile-img:hover {
+          transform: rotate(-2deg) scale(1.03);
+          box-shadow: 0 20px 25px -5px rgb(27, 26, 26), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .social-icon {
+          transition: all 0.3s ease;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: rgba(197, 165, 121, 0.1);
+      }
+      
+      .social-icon:hover {
+          background: var(--accent);
+          color: var(--primary);
+          transform: translateY(-5px);;
+      }
+      
+      .section-divider {
+          border-top: 1px solid rgba(197, 165, 121, 0.2);
+      }
+      
+      .timeline-item {
+          position: relative;
+          padding-right: 2rem;
+      }
+      
+      .timeline-item:before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(to bottom, #c5a579, transparent);
+      }
+      
+      .timeline-dot {
+          position: absolute;
+          right: -6px;
+          top: 0;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #c5a579;
+          box-shadow: 0 0 0 4px rgba(197, 165, 121, 0.3);
+      }
+      
+      .skill-bar {
+          height: 8px;
+          background: rgba(255,255,255,0.1);
+          border-radius: 4px;
+          overflow: hidden;
+      }
+      
+      .skill-progress {
+          height: 100%;
+          background: linear-gradient(90deg, #c5a579, #e8c897);
+          border-radius: 4px;
+          transition: width 1.5s ease;
+      }
+      
+      .floating-shape {
+          position: absolute;
+          opacity: 0.1;
+          z-index: -1;
+      }
+      
+      .shape-1 {
+          top: 10%;
+          left: 5%;
+          width: 100px;
+          height: 100px;
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+          background: #c5a579;
+          animation: float 8s ease-in-out infinite;
+      }
+      
+      .shape-2 {
+          bottom: 10%;
+          right: 5%;
+          width: 150px;
+          height: 150px;
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+          background: #c5a579;
+          animation: float 10s ease-in-out infinite reverse;
+      }
+      
+      .card-hover {
+          transition: all 0.3s ease;
+          transform-style: preserve-3d;
+      }
+      
+      .card-hover:hover {
+          transform: translateY(-10px) rotateX(5deg);
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .text-gradient {
+          background: linear-gradient(90deg, #c5a579, #e8c897);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+      }
+      
+      .glow-text {
+          text-shadow: 0 0 10px rgba(232, 200, 151, 0.5);
+      }
+      
+      @keyframes rotate {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+      }
+      
+      .rotate-animation {
+          animation: rotate 20s linear infinite;
+      }
+    </style>
+</head>
+<body class="text-gray-100 min-h-screen font-DAMOON overflow-x-hidden">
+    <!-- Floating Background Shapes -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    
+    <!-- Animated Particles -->
+    <div id="particles-js" class="absolute inset-0 z-0"></div>
+    
+    <div class="container mx-auto px-4 py-12 max-w-6xl relative z-10">
+       <!-- Header Section with Animation -->
+       <header class="text-center mb-16 animate-fade-in">
+        <h1 class="text-4xl md:text-5xl font-SemiBold text-gradient glow-text mb-4 leading-[1.6] pt-6 pb-2 transform transition duration-700 hover:scale-105">
+          علی نورانی
+        </h1>
+        <div class="w-full h-1 bg-gradient-to-r from-secondary to-accent rounded-full mx-auto mb-6"></div>
+        <p class="text-xl text-gray-300 relative inline-block">
+          <span class="relative z-10">عکاس با تمرکز بر عکاسی تبلیغاتی</span>
+        </p>
+      </header>
+      
+      
+
+
+        <!-- Main Profile Section -->
+        <div class="bg-gray-900 bg-opacity-80 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:shadow-2xl">
+            <div class="md:flex">
+                <!-- Left Column - Profile Image -->
+                <div class="md:w-1/3 p-8 flex flex-col items-center bg-gray-800 bg-opacity-70">
+                    <div class="aspect-[3/4] w-full max-w-xs mb-6 rounded-xl overflow-hidden group relative">
+                        <div class="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-xl"></div>
+                        <img src="ali nurani.jpg"
+                             alt=" "
+                             class="w-full h-full object-cover rounded-xl transition-all duration-500 ease-in-out group-hover:scale-105 " />
+                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-secondary rounded-xl pointer-events-none transition-all duration-500"></div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="w-full mb-6">
+                        <h3 class="text-lg font-SemiBold text-secondary mb-3 border-b border-secondary pb-2 flex items-center">
+                            <i class="fas fa-address-card ml-2 animate-pulse"></i>
+                            اطلاعات تماس
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center transition-transform duration-300 hover:translate-x-1">
+                                <div class="w-8 h-8 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full mr-2">
+                                    <i class="fas fa-envelope text-secondary"></i>
+                                </div>
+                                <span>بلی</span>
+                            </li>
+                            <li class="flex items-center transition-transform duration-300 hover:translate-x-1">
+                                <div class="w-8 h-8 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full mr-2">
+                                    <i class="fas fa-map-marker-alt text-secondary"></i>
+                                </div>
+                                <span>همدان، ایران</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Skills Progress -->
+                    <div class="w-full mb-6">
+                      <h3 class="text-lg font-SemiBold text-secondary mb-3 border-b border-secondary pb-2 flex items-center">
+                          <i class="fas fa-chart-bar ml-2 animate-pulse"></i>
+                          مهارت‌های کلیدی
+                      </h3>
+                      <div class="space-y-4">
+                          <div>
+                              <div class="flex justify-between mb-1">
+                                  <span class="text-sm">عکاسی</span>
+                                  <span class="text-sm text-gray-500">98%</span>
+                              </div>
+                              <div class="skill-bar">
+                                  <div class="skill-progress" style="width: 98%"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+
+                    <!-- Social Media Links -->
+                    <div class="w-full">
+                        <h3 class="text-lg font-SemiBold text-secondary mb-3 border-b border-secondary pb-2 flex items-center">
+                            <i class="fas fa-share-alt ml-2 animate-pulse"></i>
+                            ارتباط با من
+                        </h3>
+                        <div class="flex justify-center space-x-4 space-x-reverse">
+                            <a href="https://www.instagram.com/privatenoorani?igsh=MTZnMGF0OGZueHZuYw==" 
+                               target="_blank" 
+                               class="social-icon text-gray-300 hover:text-white">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Profile Content -->
+                <div class="md:w-2/3 p-8">
+                    <!-- About Section -->
+                    <section class="mb-8">
+                        <div class="flex items-center mb-4 group">
+                            <h2 class="text-2xl font-SemiBold text-secondary border-b border-secondary pb-2 flex items-center">
+                                <i class="fas fa-user ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
+                                درباره من
+                            </h2>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed mb-4 animate-fade-in">
+                          علی نورانی، متولد ۱۳۸۵، عکاسی را عرصه‌ای برای تجربه، کشف و روایت‌های متنوع می‌داند. او خود را به یک ژانر محدود نکرده، چرا که باور دارد هر سوژه و هر لحظه، زبان خاص خود را می‌طلبد و هر سبک عکاسی، دریچه‌ای متفاوت برای تماشای جهان است. از مستند تا پرتره، از عکاسی خیابانی تا تبلیغاتی، هر تصویر برای او فرصتی‌ست برای شناخت بیشتر انسان، فضا، و لحظه. آشنایی‌اش با طیف گسترده‌ای از ژانرها، به علی این امکان را داده تا به‌مرور سبک شخصی خود را شکل دهد—سبکی که در آن نگاه تیزبین، دقت به جزئیات، و حساسیت به نور و ترکیب‌بندی، نقش اساسی دارند. او در عکاسی نه به‌دنبال تکرار فرم‌ها، بلکه در جست‌وجوی کشف تازه‌هاست؛ روایتی که پیش‌تر دیده نشده یا نادیده گرفته شده است. علی نورانی عکاسی را تمرینی مداوم برای دیدن می‌داند—دیدنی عمیق‌تر، دقیق‌تر و انسانی‌تر. آینده‌ی او در عکاسی، همچون گذشته‌اش، متکی بر تجربه‌ورزی، انعطاف‌پذیری، و میل همیشگی به یادگیری‌ست؛ راهی که هر بار با نوری تازه روشن می‌شود.
+                    </section>
+
+                    <div class="section-divider my-8"></div>
+
+                    <!-- Skills Section -->
+<section class="mb-8">
+  <div class="flex items-center mb-4 group">
+    <h2 class="text-2xl font-SemiBold text-secondary border-b border-secondary pb-2 flex items-center">
+      <i class="fas fa-star ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
+      تخصص‌های حرفه‌ای
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- عکاسی -->
+    <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 card-hover relative">
+      <div class="absolute top-3 right-3 w-10 h-10 flex items-center justify-center bg-secondary bg-opacity-20 rounded-full">
+        <i class="fas fa-camera text-secondary"></i>
+      </div>
+      <h3 class="font-semibold text-secondary mt-12">عکاسی</h3>
+      <p class="text-gray-300 text-sm">
+        ثبت لحظات بی‌تکرار از دنیای اطراف، با نگاه هنری که داستانی فراتر از تصویر را روایت می‌کند.
+      </p>
+    </div>
+  </div>
+
+<!-- Experience Section -->
+<section class="mb-8 mt-8">
+
+  <div class="flex items-center mb-4 group">
+      <h2 class="text-2xl font-SemiBold text-secondary border-b border-secondary pb-2 flex items-center">
+          <i class="fas fa-briefcase ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
+          تجربیات حرفه‌ای
+      </h2>
+  </div>
+  <div class="space-y-6">
+      <!-- عکاسی -->
+      <div class="timeline-item pl-6">
+          <div class="timeline-dot"></div>
+          <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
+              <h3 class="font-semibold text-secondary">عکاسی</h3>
+              <p class="text-gray-300 text-sm">
+                خالق مجموعه...
+              </p>
+          </div>
+      </div>
+</section>
+
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-400 text-sm">
+            <div class="flex items-center justify-center space-x-4 space-x-reverse mb-4">
+            <p>© 2025 - تمامی حقوق محفوظ است. طراحی و توسعه توسط محمدرضا زارعی</p>
+        </footer>
+    </div>
+
+    <script>
+        // GSAP Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header animation
+            gsap.from('header h1', {
+                duration: 1.5,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out"
+            });
+            
+            gsap.from('header p', {
+                duration: 1.5,
+                y: 50,
+                opacity: 0,
+                delay: 0.3,
+                ease: "power3.out"
+            });
+            
+            // Profile image animation
+            gsap.from('.profile-img', {
+                duration: 1.5,
+                scale: 0.9,
+                opacity: 0,
+                delay: 0.6,
+                ease: "back.out(1.7)"
+            });
+            
+            // Section animations
+            gsap.utils.toArray('section').forEach((section, i) => {
+                gsap.from(section, {
+                    duration: 1,
+                    y: 30,
+                    opacity: 0,
+                    delay: 0.3 + (i * 0.2),
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    },
+                    ease: "power3.out"
+                });
+            });
+            
+            // Skill bars animation
+            gsap.utils.toArray('.skill-progress').forEach(bar => {
+                gsap.from(bar, {
+                    duration: 2,
+                    width: 0,
+                    scrollTrigger: {
+                        trigger: bar,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    },
+                    ease: "power3.out"
+                });
+            });
+            
+            // Project cards animation
+            gsap.utils.toArray('.group').forEach((card, i) => {
+                gsap.from(card, {
+                    duration: 0.8,
+                    y: 50,
+                    opacity: 0,
+                    delay: i * 0.1,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 90%",
+                        toggleActions: "play none none none"
+                    },
+                    ease: "power3.out"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
