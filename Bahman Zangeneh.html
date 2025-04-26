@@ -39,11 +39,16 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      @font-face {
-        font-family: 'DAMOON';
-          src: url('DAMOON.woff') format('woff'),
-          font-display:Medium;
-      }
+@font-face {
+    font-family: 'DAMOON';
+    src: 
+        url('DAMOON.woff2') format('woff2'), /* Modern browsers */
+        url('DAMOON.woff') format('woff'),   /* Most browsers */
+        url('DAMOON.ttf') format('truetype'); /* Mobile browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
   
       html {
           font-size: 16px;
@@ -234,10 +239,8 @@
                 <div class="md:w-1/3 p-8 flex flex-col items-center bg-gray-800 bg-opacity-70">
                     <div class="aspect-[3/4] w-full max-w-xs mb-6 rounded-xl overflow-hidden group relative">
                         <div class="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-xl"></div>
-                          <img src="https://raw.githubusercontent.com/mmreza789/Magazine-Info/main/Bahman%20Zangeneh.JPG"
+                        <img src="Bahman Zangeneh.JPG"
                              alt="Bahman Zangeneh"
-                             class="w-full h-full object-cover rounded-xl transition-all duration-500 ease-in-out group-hover:scale-105" />
-
                              class="w-full h-full object-cover rounded-xl transition-all duration-500 ease-in-out group-hover:scale-105 " />
                         <div class="absolute inset-0 border-2 border-transparent group-hover:border-secondary rounded-xl pointer-events-none transition-all duration-500"></div>
                     </div>
@@ -420,7 +423,7 @@
           <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
               <h3 class="font-semibold text-secondary">نویسندگی و ادبیات</h3>
               <p class="text-gray-300 text-sm">
-                  نویسنده کتاب‌های: بلی...
+                  نویسنده کتاب‌های: بلی
               </p>
           </div>
       </div>
