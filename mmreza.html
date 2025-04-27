@@ -42,7 +42,6 @@
       @font-face {
         font-family: 'DAMOON';
           src: url('DAMOON.woff') format('woff'),
-          font-display:Medium;
       }
       :root {
             --primary: #0f162d;
@@ -74,7 +73,7 @@
       
       body {
           font-family: 'DAMOON', 'Noto Nastaliq Urdu', serif;
-          background: linear-gradient(135deg, #0f162d 0%, #21283a 100%);
+          background: linear-gradient(15deg, #0f162d 0%, #c5a579 90%);
       }
   
       
@@ -146,7 +145,7 @@
       
       .floating-shape {
           position: absolute;
-          opacity: 0.1;
+          opacity: 0.8;
           z-index: -1;
       }
       
@@ -156,7 +155,7 @@
           width: 100px;
           height: 100px;
           border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-          background: #c5a579;
+          background: #0f162d;
           animation: float 8s ease-in-out infinite;
       }
       
@@ -166,7 +165,7 @@
           width: 150px;
           height: 150px;
           border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-          background: #c5a579;
+          background: #0f162d;
           animation: float 10s ease-in-out infinite reverse;
       }
       
@@ -181,16 +180,12 @@
       }
       
       .text-gradient {
-          background: linear-gradient(90deg, #c5a579, #e8c897);
+          background: linear-gradient(90deg, #0f162d, #182346);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
       }
-      
-      .glow-text {
-          text-shadow: 0 0 10px rgba(232, 200, 151, 0.5);
-      }
-      
+    
       @keyframes rotate {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
@@ -212,13 +207,11 @@
     <div class="container mx-auto px-4 py-12 max-w-6xl relative z-10">
        <!-- Header Section with Animation -->
        <header class="text-center mb-16 animate-fade-in">
-        <h1 class="text-4xl md:text-5xl font-SemiBold text-gradient glow-text pt-6 pb-2 leading-[1.6] mb-4 transform transition duration-700 hover:scale-105">
-          محمدرضا زارعی
+        <h1 class="text-4xl md:text-5xl font-SemiBold text-gradient glow-text mb-4 leading-[1.6] pt-6 pb-2 transform transition duration-700 hover:scale-105">
+        محمدرضا زارعی
         </h1>
-      
-        <div class="w-full h-1 bg-gradient-to-r from-secondary to-accent rounded-full mx-auto mb-6"></div>
-      
-        <p class="text-xl text-gray-300 relative inline-block">
+        <div class="w-full h-1 bg-gradient-to-r from-[#182346] to-[#0f162d] rounded-full mx-auto mb-6"></div>
+        <p class="text-xl text-[#0f162d] relative inline-block">
           <span class="relative z-10">تایپوگرافر، طراح گرافیک، طراح UI و هویت بصری</span>
         </p>
       </header>
@@ -350,14 +343,7 @@
                             </h2>
                         </div>
                         <p class="text-gray-300 leading-relaxed mb-4 animate-fade-in">
-                            محمدرضا زارعی، متولد ۱۳۸۵، طراحی که مرز میان نوشتار، تصویر و تعامل را با نگاهی دقیق و خلاقانه کاوش می‌کند. مسیر حرفه‌ای او از دنیای تایپوگرافی آغاز شد؛ جایی که حروف نه فقط وسیله‌ای برای نوشتن، بلکه سازه‌هایی برای معنا، ریتم و احساس هستند.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed mb-4 animate-fade-in">
-                            در نگاه او، تایپ‌دیزاین ترکیبی‌ست از دقت مهندسی و ظرافت شاعرانه—روشی برای خلق زبان بصری منحصر‌به‌فرد. هم‌زمان با طراحی تایپ، محمدرضا به طراحی هویت بصری روی آورد؛ ساخت سیستم‌های گرافیکی یکپارچه که در آن‌ها رنگ، فرم، ساختار و صدا در کنار هم کار می‌کنند تا شخصیت بصری یک برند یا پروژه را شکل دهند.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed animate-fade-in">
-                            تجربه‌ی او در طراحی رابط کاربری (UI) نیز بر پایه‌ی همین درک عمیق از فرم و عملکرد است؛ طراحی برای او فقط زیبا ساختن نیست، بلکه ساده‌سازی تجربه‌ی انسانی‌ست در مواجهه با فضاهای دیجیتال.
-                        </p>
+                            محمدرضا زارعی متولد ۱۳۸۵، طراح تایپ، هویت بصری و رابط کاربری است. او طراح مستقلی‌ست که در مرز میان نوشتار، تصویر و تعامل فعالیت می‌کند. فعالیت‌های او از طراحی تایپ و تایپوگرافی آغاز شد و به‌تدریج به طراحی هویت بصری و رابط کاربری گسترش یافت. نگاه او به حروف، فراتر از نوشتار صرف است و تایپ را به عنوان سازه‌ای برای شکل‌دادن به زبان بصری می‌بیند. او در طی سال‌های اخیر به صورت پروژه‌های شخصی و مطالعات مستقل بر روی ساخت سیستم‌های گرافیکی یکپارچه تمرکز داشته و تلاش کرده میان رنگ، فرم، صدا و ساختار ارتباطی هماهنگ ایجاد کند. تسلط نسبی به زبان‌های نشانه‌گذاری مانند HTML و آشنایی با اصول CSS به او امکان داده است تا درک بهتری از رابطه‌ی طراحی و پیاده‌سازی در محیط‌های دیجیتال پیدا کند. محمدرضا به‌واسطه‌ی علاقه به تصویر، نگاهی جزیی‌نگر به ترکیب‌بندی‌های بصری دارد؛ چه در طراحی رابط کاربری و چه در ثبت قاب‌هایی که روایت را بدون نیاز به کلمه منتقل می‌کنند.
                     </section>
 
                     <div class="section-divider my-8"></div>
@@ -428,35 +414,45 @@
 
                     <div class="section-divider my-8"></div>
 
-                    <!-- Experience Section -->
-                    <section class="mb-8">
-                        <div class="flex items-center mb-4 group">
-                            <h2 class="text-2xl font-SemiBold text-secondary border-b border-secondary pb-2 flex items-center">
-                                <i class="fas fa-briefcase ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
-                                تجربیات حرفه‌ای
-                            </h2>
-                        </div>
-                        <div class="space-y-6">
-                            <div class="timeline-item pl-6">
-                                <div class="timeline-dot"></div>
-                                <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
-                                    <h3 class="font-semibold text-secondary">طراح تایپ فیس</h3>
-                                    <p class="text-gray-300 text-sm">
-                                        طراحی و توسعه فونت‌های اختصاصی فارسی و لاتین با تمرکز بر خوانایی و زیبایی‌شناسی.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="timeline-item pl-6">
-                                <div class="timeline-dot"></div>
-                                <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
-                                    <h3 class="font-semibold text-secondary">طراح UI/UX</h3>
-                                    <p class="text-gray-300 text-sm">
-                                        طراحی رابط کاربری و تجربه کاربری برای وب. تمرکز بر طراحی کاربرپسندوایجاد جریان‌های تعاملی بهینه.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+<!-- Experience Section -->
+<section class="mb-8">
+    <div class="flex items-center mb-4 group">
+        <h2 class="text-2xl font-SemiBold text-secondary border-b border-secondary pb-2 flex items-center">
+            <i class="fas fa-briefcase ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
+            تجربیات حرفه‌ای
+        </h2>
+    </div>
+    <div class="space-y-6">
+        <div class="timeline-item pl-6">
+            <div class="timeline-dot"></div>
+            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
+                <h3 class="font-semibold text-secondary">طراح تایپ فیس و تایپوگرافی</h3>
+                <p class="text-gray-300 text-sm">
+                    طراحی و توسعه فونت‌های اختصاصی فارسی و عربی، با تمرکز بر خوانایی و زیبایی‌شناسی و تبدیل تایپ به زبان بصری.
+                </p>
+            </div>
+        </div>
+        <div class="timeline-item pl-6">
+            <div class="timeline-dot"></div>
+            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
+                <h3 class="font-semibold text-secondary">طراح هویت بصری</h3>
+                <p class="text-gray-300 text-sm">
+                    طراحی هویت بصری برندها و ایجاد سیستم‌های گرافیکی یکپارچه که به‌طور هماهنگ رنگ، فرم، صدا و ساختار ارتباطی را در بر می‌گیرد.
+                </p>
+            </div>
+        </div>
+        <div class="timeline-item pl-6">
+            <div class="timeline-dot"></div>
+            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
+                <h3 class="font-semibold text-secondary">طراح ui ,ux</h3>
+                <p class="text-gray-300 text-sm">
+                    طراحی رابط کاربری و تجربه کاربری برای وب‌سایت‌ها و برنامه‌های دیجیتال، با تمرکز بر طراحی کاربرپسند و ایجاد جریان‌های تعاملی بهینه.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
                 </div>
             </div>
         </div>
