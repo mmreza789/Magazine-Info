@@ -73,7 +73,7 @@
       
       body {
           font-family: 'DAMOON', 'Noto Nastaliq Urdu', serif;
-          background: linear-gradient(135deg, #0f162d 0%, #21283a 100%);
+          background: linear-gradient(15deg, #0f162d 0%, #c5a579 90%);
       }
   
       
@@ -145,7 +145,7 @@
       
       .floating-shape {
           position: absolute;
-          opacity: 0.1;
+          opacity: 0.8;
           z-index: -1;
       }
       
@@ -155,7 +155,7 @@
           width: 100px;
           height: 100px;
           border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-          background: #c5a579;
+          background: #0f162d;
           animation: float 8s ease-in-out infinite;
       }
       
@@ -165,7 +165,7 @@
           width: 150px;
           height: 150px;
           border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-          background: #c5a579;
+          background: #0f162d;
           animation: float 10s ease-in-out infinite reverse;
       }
       
@@ -180,16 +180,12 @@
       }
       
       .text-gradient {
-          background: linear-gradient(90deg, #c5a579, #e8c897);
+          background: linear-gradient(90deg, #0f162d, #182346);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
       }
-      
-      .glow-text {
-          text-shadow: 0 0 10px rgba(232, 200, 151, 0.5);
-      }
-      
+    
       @keyframes rotate {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
@@ -214,10 +210,10 @@
         <h1 class="text-4xl md:text-5xl font-SemiBold text-gradient glow-text mb-4 leading-[1.6] pt-6 pb-2 transform transition duration-700 hover:scale-105">
            عرشیا عسگری
         </h1>
-        <div class="w-full h-1 bg-gradient-to-r from-secondary to-accent rounded-full mx-auto mb-6"></div>
-        <p class="text-xl text-gray-300 relative inline-block">
-          <span class="relative z-10">عکاس با تمرکز بر عکاسی تبلیغاتی</span>
-        </p>
+        <div class="w-full h-1 bg-gradient-to-r from-[#182346] to-[#0f162d] rounded-full mx-auto mb-6"></div>
+        <p class="text-xl text-[#0f162d] relative inline-block">
+            <span class="relative z-10">عکاس با تمرکز بر عکاسی تبلیغاتی</span>
+          </p>          
       </header>
       
       
@@ -258,33 +254,44 @@
                         </ul>
                     </div>
 
-                    <!-- Skills Progress -->
-                    <div class="w-full mb-6">
-                      <h3 class="text-lg font-SemiBold text-secondary mb-3 border-b border-secondary pb-2 flex items-center">
-                          <i class="fas fa-chart-bar ml-2 animate-pulse"></i>
-                          مهارت‌های کلیدی
-                      </h3>
-                      <div class="space-y-4">
-                          <div>
-                              <div class="flex justify-between mb-1">
-                                  <span class="text-sm">عکاسی تبلیغاتی</span>
-                                  <span class="text-sm text-gray-500">88%</span>
-                              </div>
-                              <div class="skill-bar">
-                                  <div class="skill-progress" style="width: 88%"></div>
-                              </div>
-                          </div>
-                          <div>
-                              <div class="flex justify-between mb-1">
-                                  <span class="text-sm">عکاسی در ژانر‌های دیگر</span>
-                                  <span class="text-sm text-gray-500">73%</span>
-                              </div>
-                              <div class="skill-bar">
-                                  <div class="skill-progress" style="width: 73%"></div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+<!-- Skills Progress -->
+<div class="w-full mb-6">
+    <h3 class="text-lg font-SemiBold text-secondary mb-3 border-b border-secondary pb-2 flex items-center">
+        <i class="fas fa-chart-bar ml-2 animate-pulse"></i>
+        مهارت‌های کلیدی
+    </h3>
+    <div class="space-y-4">
+        <div>
+            <div class="flex justify-between mb-1">
+                <span class="text-sm">عکاسی تبلیغاتی</span>
+                <span class="text-sm text-gray-500">88%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+            </div>
+        </div>
+        <div>
+            <div class="flex justify-between mb-1">
+                <span class="text-sm">عکاسی در ژانر‌های دیگر</span>
+                <span class="text-sm text-gray-500">73%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 73%"></div>
+            </div>
+        </div>
+        <!-- Added Graphic Design Skill -->
+        <div>
+            <div class="flex justify-between mb-1">
+                <span class="text-sm">طراحی گرافیک</span>
+                <span class="text-sm text-gray-500">67%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 67%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
                   
 
                     <!-- Social Media Links -->
@@ -294,7 +301,7 @@
                             ارتباط با من
                         </h3>
                         <div class="flex justify-center space-x-4 space-x-reverse">
-                            <a href="لینک" 
+                            <a href="https://www.instagram.com/arshia9_9?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
                                target="_blank" 
                                class="social-icon text-gray-300 hover:text-white">
                                 <i class="fab fa-instagram"></i>
@@ -314,14 +321,13 @@
                             </h2>
                         </div>
                         <p class="text-gray-300 leading-relaxed mb-4 animate-fade-in">
-                            عرشیا عسگری، متولد ۱۳۸۴، با اشتیاقی عمیق نسبت به عکاسی، مسیر خود را در دنیای تصویر آغاز کرده است.
-                            اگرچه در آغاز راه حرفه‌ای خود قرار دارد، اما تجربه‌های شخصی، مطالعات آزاد و تمرین‌های مستمر باعث شده‌اند نگاه او به عکاسی فراتر از یک علاقه‌ ساده باشد. برای او، عکاسی یک ابزار ارتباطی و زبانی بصری‌ست که امکان گفت‌وگو با مخاطب را بی‌واسطه و مؤثر فراهم می‌کند.
+                            عرشیا عسگری، متولد ۱۳۸۴، با شور و اشتیاق عمیق نسبت به عکاسی، از همان ابتدا وارد دنیای تصویر و هنر عکاسی شده است. هرچند هنوز در ابتدای مسیر حرفه‌ای خود قرار دارد، اما تجربیات متعدد در پروژه‌های مختلف، مطالعات آزاد و تمرین‌های مستمر باعث شده نگاه او به عکاسی فراتر از یک علاقه‌ی صرف باشد. او عکاسی را یک زبان بصری می‌داند که به واسطه‌ی آن می‌تواند با مخاطب به‌طور مستقیم و مؤثر ارتباط برقرار کند.
+
+                            تجربه‌های حرفه‌ای عرشیا شامل پروژه‌های مختلفی است، از جمله عکاسی پرسنلی برای اداره آموزش و پرورش همدان، عکاسی پرسنلی و پروژه‌ای برای شهرداری همدان، عکاسی آتلیه‌ای و خیابانی، و همچنین همکاری با چندین شرکت خصوصی گرافیکی به عنوان گرافیست و عکاس. همچنین، او در چندین چاپ‌خانه به عنوان گرافیست فعالیت داشته و در این مدت توانسته است ترکیب این دو هنر را به شیوه‌ای نوآورانه به کار گیرد.
                             
-                            تمرکز اصلی عرشیا بر عکاسی تبلیغاتی‌ست؛ شاخه‌ای که در آن خلاقیت بصری، شناخت روان‌شناسی مخاطب و مهارت‌های تکنیکی به شکلی هماهنگ در خدمت انتقال پیام یا هویت برند قرار می‌گیرند. علاقه‌مندی او به این حوزه، از ترکیب دو دغدغه‌ی همیشگی‌اش شکل گرفته: تصویرسازی دقیق و اثرگذار، و تأثیرگذاری اجتماعی از طریق رسانه.
+                            تمرکز اصلی او در عکاسی بر تبلیغات است؛ جایی که خلاقیت بصری، مهارت‌های تکنیکی و روان‌شناسی مخاطب در کنار هم قرار می‌گیرند تا پیامی قوی و هدفمند انتقال یابد. عرشیا تلاش می‌کند تعادلی میان زیبایی‌شناسی و کارکرد ایجاد کند؛ از نورپردازی دقیق تا ترکیب‌بندی‌های حساب‌شده، همه‌چیز در راستای ساخت تصاویری است که نه تنها زیبایند، بلکه معنا و هدف مشخصی دارند.
                             
-                            در روند تولید آثارش، تلاش می‌کند تعادل میان زیبایی‌شناسی و کارکرد را حفظ کند؛ از نورپردازی کنترل‌شده تا ترکیب‌بندی‌های حساب‌شده، همه در راستای ساخت تصویری‌ست که نه تنها زیبا باشد، بلکه معنا و هدف مشخصی را نیز منتقل کند.
-            
-                            آرزوی او، گسترش مهارت‌ها در این حوزه و همکاری با برندها، استودیوها و فضاهای خلاقانه‌ای‌ست که به قدرت تصویر ایمان دارند. این پورتفولیو بازتابی‌ست از گام‌های نخست او در مسیر حرفه‌ای عکاسی، با امید به آینده‌ای روشن‌تر و حرفه‌ای‌تر.
+                            آرزوی او گسترش مهارت‌ها و همکاری با برندها، استودیوها و فضاهای خلاقانه‌ای است که به قدرت تصویر و تأثیرگذاری آن اعتقاد دارند. این پورتفولیو، گام‌های نخست او در دنیای حرفه‌ای عکاسی را نمایش می‌دهد و امید دارد که در آینده‌ای نزدیک، به جایگاهی برجسته‌تر در این عرصه دست یابد.
                     </section>
 
                     <div class="section-divider my-8"></div>
@@ -349,25 +355,48 @@
 
 <!-- Experience Section -->
 <section class="mb-8 mt-8">
+    <div class="flex items-center mb-4 group">
+        <h2 class="text-2xl font-SemiBold text-secondary border-b border-secondary pb-2 flex items-center">
+            <i class="fas fa-briefcase ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
+            تجربیات حرفه‌ای
+        </h2>
+    </div>
+    <div class="space-y-6">
+        <!-- عکاسی -->
+        <div class="timeline-item pl-6">
+            <div class="timeline-dot"></div>
+            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
+                <h3 class="font-semibold text-secondary">عکاسی پرسنلی</h3>
+                <p class="text-gray-300 text-sm">
+                    عکاسی پرسنلی برای اداره آموزش و پرورش همدان و شهرداری همدان، که شامل پروژه‌های مختلفی در فضای آتلیه‌ای و خیابانی بود.
+                </p>
+            </div>
+        </div>
 
-  <div class="flex items-center mb-4 group">
-      <h2 class="text-2xl font-SemiBold text-secondary border-b border-secondary pb-2 flex items-center">
-          <i class="fas fa-briefcase ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
-          تجربیات حرفه‌ای
-      </h2>
-  </div>
-  <div class="space-y-6">
-      <!-- عکاسی -->
-      <div class="timeline-item pl-6">
-          <div class="timeline-dot"></div>
-          <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
-              <h3 class="font-semibold text-secondary">عکاسی</h3>
-              <p class="text-gray-300 text-sm">
-                خالق مجموعه...
-              </p>
-          </div>
-      </div>
+        <!-- عکاسی تبلیغاتی -->
+        <div class="timeline-item pl-6">
+            <div class="timeline-dot"></div>
+            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
+                <h3 class="font-semibold text-secondary">عکاسی تبلیغاتی</h3>
+                <p class="text-gray-300 text-sm">
+                    همکاری با برندها و استودیوهای مختلف در زمینه تولید محتوای بصری تبلیغاتی برای معرفی خدمات و محصولات، از جمله عکاسی محصول و عکاسی برای کمپین‌های دیجیتال.
+                </p>
+            </div>
+        </div>
+
+        <!-- طراحی گرافیک -->
+        <div class="timeline-item pl-6">
+            <div class="timeline-dot"></div>
+            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
+                <h3 class="font-semibold text-secondary">طراحی گرافیک</h3>
+                <p class="text-gray-300 text-sm">
+                    کار به عنوان گرافیست در چندین شرکت خصوصی گرافیکی و چاپخانه با ،تمرکز بر طراحی لوگو، تبلیغات چاپی و طراحی گرافیکی برای رسانه‌ها و برندها.
+                </p>
+            </div>
+        </div>
+    </div>
 </section>
+
 
                 </div>
             </div>
