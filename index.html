@@ -7,15 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-@font-face {
-    font-family: 'DAMOON';
-    src: 
-        url('DAMOON.woff2') format('woff2'), /* Modern browsers */
-        url('DAMOON.woff') format('woff'),   /* Most browsers */
-        url('DAMOON.ttf') format('truetype'); /* Mobile browsers */
-    font-weight: normal;
-    font-style: normal;
-}
+        @font-face {
+            font-family: 'DAMOON';
+            src: 
+                url('DAMOON.woff2') format('woff2'),
+                url('DAMOON.woff') format('woff'),
+                url('DAMOON.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
         
         :root {
             --primary: #c5a579;
@@ -208,7 +208,6 @@
             pointer-events: none;
         }
         
-        
         .accent-text {
             color: var(--accent);
         }
@@ -365,6 +364,226 @@
                 background-position-x: 1200px;
             }
         }
+
+        /* Design Specs Section */
+        .design-specs-section {
+            background: linear-gradient(145deg, #0f162d 0%, #1a2238 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .design-specs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .design-specs-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary);
+        }
+
+        .design-specs-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+            border-radius: 3px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .specs-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 165, 121, 0.2);
+            transition: all 0.5s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .specs-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .specs-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 35px rgba(15, 22, 45, 0.6);
+        }
+
+        .specs-card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .color-palette {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .color-item {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .color-item:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .color-item::after {
+            content: 'کلیک برای کپی';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .color-item:hover::after {
+            opacity: 1;
+        }
+
+        .font-item {
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 3px solid var(--primary);
+        }
+
+        .font-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(10px);
+        }
+
+        .font-item.primary {
+            font-family: 'DAMOON', Tahoma, sans-serif;
+            font-size: 1.3rem;
+        }
+
+        .font-item.secondary {
+            font-family: Tahoma, sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .font-link {
+            display: block;
+            margin-top: 10px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .font-link:hover {
+            text-decoration: underline;
+        }
+
+        .design-elements {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .design-element {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .design-element:hover {
+            background: rgba(255,255,255,0.1);
+            transform: scale(1.05);
+        }
+
+        .element-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Toast notification */
+        #toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 22, 45, 0.9);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2000;
+            pointer-events: none;
+        }
+
+        #toast.show {
+            opacity: 1;
+        }
+
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            background: rgba(197, 165, 121, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -497,7 +716,7 @@
                             </p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس تبلیغاتی</span>
-                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس مستند</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gradient-to-r from-[#c5a579] to-[#e8c99b] text-[#0f162d]">عکاس مستند</span>
                             </div>
                         </div>
                     </a>
@@ -543,7 +762,7 @@
                             </p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس تبیغاتی</span>
-                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">طراح گرافیک</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">طراح گرافik</span>
                                 <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">ناظر چاپ</span>
                             </div>
                         </div>
@@ -668,6 +887,110 @@
         </div>
     </section>
 
+    <!-- Design Specifications Section -->
+    <section class="design-specs-section">
+        <div class="design-specs-container">
+            <h2 class="design-specs-title">مشخصات طراحی</h2>
+    
+            <div class="specs-grid">
+                <!-- Color Palette Card -->
+                <div class="specs-card">
+                    <h3 class="specs-card-title">
+                        <i class="fas fa-palette"></i>
+                        پالت رنگی
+                    </h3>
+                    <p class="text-gray-300 mb-4">رنگ‌های اصلی استفاده شده در طراحی</p>
+    
+                    <div class="color-palette">
+                        <div class="color-item" style="background-color: #c5a579;" onclick="copyToClipboard('#c5a579')">
+                            #c5a579
+                        </div>
+                        <div class="color-item" style="background-color: #0f162d;" onclick="copyToClipboard('#0f162d')">
+                            #0f162d
+                        </div>
+                        <div class="color-item" style="background-color: #1a2238;" onclick="copyToClipboard('#1a2238')">
+                            #1a2238
+                        </div>
+                        <div class="color-item" style="background-color: #e8c99b;" onclick="copyToClipboard('#e8c99b')">
+                            #e8c99b
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Fonts Card -->
+                <div class="specs-card">
+                    <h3 class="specs-card-title">
+                        <i class="fas fa-font"></i>
+                        فونت‌ها
+                    </h3>
+                    <p class="text-gray-300 mb-4">فونت‌های استفاده شده در پروژه</p>
+    
+                    <div class="font-item primary">
+                        فونت اصلی: DAMOON
+                        <a href="https://example.com/fonts/damoon" class="font-link" target="_blank">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            دانلود فونت
+                        </a>
+                    </div>
+                    <div class="font-item secondary">
+                        فونت ثانویه: Tahoma
+                        <a href="https://example.com/fonts/tahoma" class="font-link" target="_blank">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            اطلاعات بیشتر
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Design Elements Card -->
+                <div class="specs-card">
+                    <h3 class="specs-card-title">
+                        <i class="fas fa-shapes"></i>
+                        عناصر طراحی
+                    </h3>
+                    <p class="text-gray-300 mb-4">مولفه‌های اصلی طراحی</p>
+    
+                    <div class="design-elements">
+                        <div class="design-element">
+                            <div class="element-icon">
+                                <i class="fas fa-border-all"></i>
+                            </div>
+                            <div>شبکه‌بندی</div>
+                        </div>
+                        <div class="design-element">
+                            <div class="element-icon">
+                                <i class="fas fa-box-shadow"></i>
+                            </div>
+                            <div>سایه‌ها</div>
+                        </div>
+                        <div class="design-element">
+                            <div class="element-icon">
+                                <i class="fas fa-ruler-combined"></i>
+                            </div>
+                            <div>فاصله‌ها</div>
+                        </div>
+                        <div class="design-element">
+                            <div class="element-icon">
+                                <i class="fas fa-circle-notch"></i>
+                            </div>
+                            <div>انحناها</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- JavaScript for Copy to Clipboard Function -->
+    <script>
+        function copyToClipboard(color) {
+            navigator.clipboard.writeText(color).then(function() {
+                alert("رنگ کپی شد: " + color);
+            }).catch(function(err) {
+                alert("خطا در کپی رنگ: " + err);
+            });
+        }
+    </script>
+    
     <!-- Footer Section -->
     <footer class="footer">
         <div class="wave"></div>
@@ -712,47 +1035,33 @@
                 </div>
             </div>
 
-<!-- آیکون‌ها -->
-<div class="flex justify-center gap-6 mb-12">
-    <a href="#" class="social-icon" onclick="showToast(event)">
-        <i class="fab fa-instagram text-2xl"></i>
-    </a>
-    <a href="#" class="social-icon" onclick="showToast(event)">
-        <i class="fab fa-telegram text-2xl"></i>
-    </a>
-    <a href="#" class="social-icon" onclick="showToast(event)">
-        <i class="fab fa-linkedin text-2xl"></i>
-    </a>
-    <a href="#" class="social-icon" onclick="showToast(event)">
-        <i class="fab fa-twitter text-2xl"></i>
-    </a>
-</div>
-
-<!-- toast نوتیفیکیشن در مرکز -->
-<div id="toast" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                     bg-gray-800 text-white text-lg px-6 py-4 rounded-2xl shadow-2xl 
-                     opacity-0 transition-opacity duration-500 pointer-events-none z-50">
-    نداریم!
-</div>
-
-<!-- اسکریپت -->
-<script>
-function showToast(event) {
-    event.preventDefault();
-    const toast = document.getElementById("toast");
-    toast.classList.remove("opacity-0");
-    toast.classList.add("opacity-100");
-    setTimeout(() => {
-        toast.classList.remove("opacity-100");
-        toast.classList.add("opacity-0");
-    }, 2000);
-}
-</script>
+            <!-- Social Icons -->
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="#" class="social-icon" onclick="showToast(event)">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="#" class="social-icon" onclick="showToast(event)">
+                    <i class="fab fa-telegram text-2xl"></i>
+                </a>
+                <a href="#" class="social-icon" onclick="showToast(event)">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="#" class="social-icon" onclick="showToast(event)">
+                    <i class="fab fa-twitter text-2xl"></i>
                 </a>
             </div>
 
             <div class="text-center text-gray-400 text-sm pb-6">
-                <p>© 2025 تمامی حقوق محفوظ است</p>
+                <p>© 2025 تمامی حقوق محفوظ است، توسعه توسط محمدرضا زارعی</p>
+            </div>
+
+            <!-- Date and Time -->
+            <div class="text-center text-gray-400 text-sm">
+                <p>
+                    <i class="fas fa-calendar-alt mr-2" style="color: #0f162d;"></i><span id="current-date" style="color: #0f162d;"></span>
+                    <br>
+                    <i class="fas fa-clock mr-2" style="color: #0f162d;"></i><span id="current-time" style="color: #0f162d;"></span>
+                </p>
             </div>
         </div>
     </footer>
@@ -769,6 +1078,9 @@ function showToast(event) {
             <i class="fas fa-text-width"></i>
         </button>
     </div>
+
+    <!-- Toast Notification -->
+    <div id="toast"></div>
 
     <script>
         // Scroll to team section
@@ -849,7 +1161,7 @@ function showToast(event) {
         // Initialize particles
         createParticles();
         
-        // Animate profile cards when they come into view
+        // Animate elements when they come into view
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -860,24 +1172,84 @@ function showToast(event) {
             threshold: 0.1
         });
         
-        document.querySelectorAll('.profile-card').forEach(card => {
-            observer.observe(card);
+        // Observe all elements that need to be animated
+        document.querySelectorAll('.profile-card, .contact-card, .specs-card').forEach(element => {
+            observer.observe(element);
         });
 
-        // Animate contact cards when they come into view
-        const contactObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        // Copy color code to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('رنگ کپی شد: ' + text);
             });
-        }, {
-            threshold: 0.1
-        });
-        
-        document.querySelectorAll('.contact-card').forEach(card => {
-            contactObserver.observe(card);
-        });
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            if (typeof message === 'object') {
+                message = 'نداریم!';
+                event.preventDefault();
+            }
+            
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Display current date
+        const currentDate = new Date().toLocaleDateString('fa-IR');
+        document.getElementById('current-date').textContent = currentDate;
+
+        // Display current time and update every second
+        function updateTime() {
+            const currentTime = new Date().toLocaleTimeString('fa-IR', { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
+            });
+            document.getElementById('current-time').textContent = currentTime;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Create floating design elements
+        function createFloatingElements() {
+            const colors = ['#c5a579', '#0f162d', '#1a2238', '#e8c99b'];
+            const container = document.querySelector('.design-specs-section');
+            
+            for (let i = 0; i < 15; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Random size between 10px and 30px
+                const size = Math.random() * 20 + 10;
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                
+                // Random position
+                element.style.left = `${Math.random() * 100}%`;
+                element.style.top = `${Math.random() * 100}%`;
+                
+                // Random color
+                element.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                element.style.opacity = Math.random() * 0.2 + 0.05;
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                element.style.animation = `float ${duration}s ease-in-out infinite ${delay}s`;
+                
+                container.appendChild(element);
+            }
+        }
+
+        // Initialize floating elements
+        createFloatingElements();
     </script>
 </body>
 </html>
