@@ -73,7 +73,7 @@
       
       body {
           font-family: 'DAMOON', 'Noto Nastaliq Urdu', serif;
-          background: linear-gradient(135deg, #0f162d 0%, #21283a 100%);
+          background: linear-gradient(15deg, #0f162d 0%, #c5a579 90%);
       }
   
       
@@ -145,7 +145,7 @@
       
       .floating-shape {
           position: absolute;
-          opacity: 0.1;
+          opacity: 0.8;
           z-index: -1;
       }
       
@@ -155,7 +155,7 @@
           width: 100px;
           height: 100px;
           border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-          background: #c5a579;
+          background: #0f162d;
           animation: float 8s ease-in-out infinite;
       }
       
@@ -165,7 +165,7 @@
           width: 150px;
           height: 150px;
           border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-          background: #c5a579;
+          background: #0f162d;
           animation: float 10s ease-in-out infinite reverse;
       }
       
@@ -180,16 +180,12 @@
       }
       
       .text-gradient {
-          background: linear-gradient(90deg, #c5a579, #e8c897);
+          background: linear-gradient(90deg, #0f162d, #182346);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
       }
-      
-      .glow-text {
-          text-shadow: 0 0 10px rgba(232, 200, 151, 0.5);
-      }
-      
+    
       @keyframes rotate {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
@@ -212,10 +208,10 @@
        <!-- Header Section with Animation -->
        <header class="text-center mb-16 animate-fade-in">
         <h1 class="text-4xl md:text-5xl font-SemiBold text-gradient glow-text mb-4 leading-[1.6] pt-6 pb-2 transform transition duration-700 hover:scale-105">
-          علی نورانی
+        علی نورانی
         </h1>
-        <div class="w-full h-1 bg-gradient-to-r from-secondary to-accent rounded-full mx-auto mb-6"></div>
-        <p class="text-xl text-gray-300 relative inline-block">
+        <div class="w-full h-1 bg-gradient-to-r from-[#182346] to-[#0f162d] rounded-full mx-auto mb-6"></div>
+        <p class="text-xl text-[#0f162d] relative inline-block">
           <span class="relative z-10">عکاس با تمرکز بر عکاسی تبلیغاتی</span>
         </p>
       </header>
