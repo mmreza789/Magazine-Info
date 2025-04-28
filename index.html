@@ -33,7 +33,7 @@
         
         .hero-section {
             height: 100vh;
-            background: linear-gradient(135deg, #c5a579 0%, #1a2a4a 80%);
+            background: linear-gradient(135deg, #c5a579 0%, #0f162d 100%);
             position: relative;
             overflow: hidden;
         }
@@ -367,30 +367,29 @@
 
         /* Design Specs Section */
         .design-specs-section {
-            background: linear-gradient(145deg, #0f162d 0%, #1a2238 100%);
+            background: linear-gradient(180deg, #0f162d 0%, #0f162d69 100%);
             padding: 80px 0;
             position: relative;
             overflow: hidden;
         }
-
+        
         .design-specs-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
             position: relative;
         }
+        
+/* عنوان بخش مشخصات طراحی */
+.design-specs-title {
+    font-size: 2.5rem;
+    color: #c5a579;
+    text-align: right; /* راست چین کردن عنوان */
+    margin-bottom: 30px;
+    margin-right: 20px; /* فاصله از لبه راست */
+    padding-left: 20px; /* اطمینان از اینکه متن از کادر سایت بیرون نمی‌ره */
+}
 
-        .design-specs-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 50px;
-            text-align: center;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--primary);
-        }
 
         .design-specs-title::after {
             content: '';
@@ -442,51 +441,63 @@
             gap: 10px;
         }
 
-        .color-palette {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
+/* پالت رنگ */
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: center; /* وسط چین کردن */
+    align-items: center; /* عمودی هم وسط */
+}
 
-        .color-item {
-            width: 70px;
-            height: 70px;
-            border-radius: 10px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding: 8px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: white;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
 
-        .color-item:hover {
-            transform: translateY(-10px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-        }
+/* هر آیتم رنگ */
+.color-item {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
 
-        .color-item::after {
-            content: 'کلیک برای کپی';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+/* خط رنگی پایین دکمه */
+.color-item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 4px;
+    background-color: white; /* رنگ خط زیر دکمه */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* انیمیشن هاور */
+.color-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* خط رشد کنه هنگام هاور */
+.color-item:hover::before {
+    width: 80%;
+}
+
 
         .color-item:hover::after {
             opacity: 1;
@@ -716,7 +727,7 @@
                             </p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس تبلیغاتی</span>
-                                <span class="px-3 py-1 text-xs rounded-full bg-gradient-to-r from-[#c5a579] to-[#e8c99b] text-[#0f162d]">عکاس مستند</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس مستند</span>
                             </div>
                         </div>
                     </a>
@@ -762,7 +773,7 @@
                             </p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">عکاس تبیغاتی</span>
-                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">طراح گرافik</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">طراح گرافیک</span>
                                 <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300">ناظر چاپ</span>
                             </div>
                         </div>
@@ -887,109 +898,97 @@
         </div>
     </section>
 
-    <!-- Design Specifications Section -->
-    <section class="design-specs-section">
-        <div class="design-specs-container">
-            <h2 class="design-specs-title">مشخصات طراحی</h2>
-    
-            <div class="specs-grid">
-                <!-- Color Palette Card -->
-                <div class="specs-card">
-                    <h3 class="specs-card-title">
-                        <i class="fas fa-palette"></i>
-                        پالت رنگی
-                    </h3>
-                    <p class="text-gray-300 mb-4">رنگ‌های اصلی استفاده شده در طراحی</p>
-    
-                    <div class="color-palette">
-                        <div class="color-item" style="background-color: #c5a579;" onclick="copyToClipboard('#c5a579')">
-                            #c5a579
-                        </div>
-                        <div class="color-item" style="background-color: #0f162d;" onclick="copyToClipboard('#0f162d')">
-                            #0f162d
-                        </div>
-                        <div class="color-item" style="background-color: #1a2238;" onclick="copyToClipboard('#1a2238')">
-                            #1a2238
-                        </div>
-                        <div class="color-item" style="background-color: #e8c99b;" onclick="copyToClipboard('#e8c99b')">
-                            #e8c99b
-                        </div>
+<!-- Design Specifications Section -->
+<section class="design-specs-section">
+    <div class="design-specs-container">
+        <h2 class="design-specs-title">مشخصات طراحی</h2>
+        
+        <div class="specs-grid">
+            <!-- Color Palette Card -->
+            <div class="specs-card">
+                <h3 class="specs-card-title">
+                    <i class="fas fa-palette"></i>
+                    پالت رنگی
+                </h3>
+                <p class="text-gray-300 mb-4">رنگ‌های اصلی استفاده شده در طراحی</p>
+                
+                <div class="color-palette">
+                    <div class="color-item" style="background-color: #c5a579;" onclick="copyToClipboard('#c5a579')">
+                        #c5a579
                     </div>
-                </div>
-    
-                <!-- Fonts Card -->
-                <div class="specs-card">
-                    <h3 class="specs-card-title">
-                        <i class="fas fa-font"></i>
-                        فونت‌ها
-                    </h3>
-                    <p class="text-gray-300 mb-4">فونت‌های استفاده شده در پروژه</p>
-    
-                    <div class="font-item primary">
-                        فونت اصلی: DAMOON
-                        <a href="https://example.com/fonts/damoon" class="font-link" target="_blank">
-                            <i class="fas fa-external-link-alt mr-1"></i>
-                            دانلود فونت
-                        </a>
-                    </div>
-                    <div class="font-item secondary">
-                        فونت ثانویه: Tahoma
-                        <a href="https://example.com/fonts/tahoma" class="font-link" target="_blank">
-                            <i class="fas fa-external-link-alt mr-1"></i>
-                            اطلاعات بیشتر
-                        </a>
-                    </div>
-                </div>
-    
-                <!-- Design Elements Card -->
-                <div class="specs-card">
-                    <h3 class="specs-card-title">
-                        <i class="fas fa-shapes"></i>
-                        عناصر طراحی
-                    </h3>
-                    <p class="text-gray-300 mb-4">مولفه‌های اصلی طراحی</p>
-    
-                    <div class="design-elements">
-                        <div class="design-element">
-                            <div class="element-icon">
-                                <i class="fas fa-border-all"></i>
-                            </div>
-                            <div>شبکه‌بندی</div>
-                        </div>
-                        <div class="design-element">
-                            <div class="element-icon">
-                                <i class="fas fa-box-shadow"></i>
-                            </div>
-                            <div>سایه‌ها</div>
-                        </div>
-                        <div class="design-element">
-                            <div class="element-icon">
-                                <i class="fas fa-ruler-combined"></i>
-                            </div>
-                            <div>فاصله‌ها</div>
-                        </div>
-                        <div class="design-element">
-                            <div class="element-icon">
-                                <i class="fas fa-circle-notch"></i>
-                            </div>
-                            <div>انحناها</div>
-                        </div>
+                    <div class="color-item" style="background-color: #0f162d;" onclick="copyToClipboard('#0f162d')">
+                        #0f162d
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+            
+            <!-- Fonts Card -->
+            <div class="specs-card">
+                <h3 class="specs-card-title">
+                    <i class="fas fa-font"></i>
+                    فونت‌ها
+                </h3>
+                <p class="text-gray-300 mb-4">فونت‌های استفاده شده در پروژه</p>
+                
+                <div class="font-item primary">
+                    فونت مجله: عتیق
+                    <a href="https://fontiran.com/fonts/atiq" class="font-link" target="_blank">
+                        <i class="fas fa-external-link-alt mr-1"></i>
+                         خرید فونت
+                    </a>
+                </div>
+                <div class="font-item secondary">
+                    فونت سایت: دامون
+                    <a href="https://fontiran.com/fonts/damoon" class="font-link" target="_blank">
+                        <i class="fas fa-external-link-alt mr-1"></i>
+                         خرید فونت
+                    </a>
+                </div>
+            </div>
+            
+<!-- Design Elements Card -->
+<div class="specs-card">
+    <h3 class="specs-card-title">
+        <i class="fas fa-shapes"></i>
+        عناصر طراحی
+    </h3>
+    <p class="text-gray-300 mb-4">مولفه‌های اصلی طراحی</p>
     
-    <!-- JavaScript for Copy to Clipboard Function -->
-    <script>
-        function copyToClipboard(color) {
-            navigator.clipboard.writeText(color).then(function() {
-                alert("رنگ کپی شد: " + color);
-            }).catch(function(err) {
-                alert("خطا در کپی رنگ: " + err);
-            });
-        }
-    </script>
+    <div class="design-elements">
+        <div class="design-element">
+            <div class="element-icon">
+                <i class="fas fa-border-all"></i>
+            </div>
+            <div>شبکه‌بندی</div>
+        </div> 
+
+        <div class="design-element">
+            <div class="element-icon">
+                <i class="fas fa-ruler-combined"></i>
+            </div>
+            <div>فاصله‌ها</div>
+        </div>
+
+        <div class="design-element">
+            <div class="element-icon">
+                <i class="fas fa-circle"></i>
+            </div>
+            <div>انحناها</div>
+        </div>
+
+        <div class="design-element">
+            <div class="element-icon">
+                <i class="fas fa-font"></i> <!-- آیکون تایپوگرافی -->
+            </div>
+            <div>تایپوگرافی</div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
     
     <!-- Footer Section -->
     <footer class="footer">
@@ -1038,9 +1037,6 @@
             <!-- Social Icons -->
             <div class="flex justify-center gap-6 mb-12">
                 <a href="#" class="social-icon" onclick="showToast(event)">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
-                <a href="#" class="social-icon" onclick="showToast(event)">
                     <i class="fab fa-telegram text-2xl"></i>
                 </a>
                 <a href="#" class="social-icon" onclick="showToast(event)">
@@ -1048,6 +1044,9 @@
                 </a>
                 <a href="#" class="social-icon" onclick="showToast(event)">
                     <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="social-icon" onclick="showToast(event)">
+                    <i class="fab fa-instagram text-2xl"></i>
                 </a>
             </div>
 
