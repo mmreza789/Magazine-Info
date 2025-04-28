@@ -39,10 +39,105 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      @font-face {
-        font-family: 'DAMOON';
-          src: url('DAMOON.woff') format('woff'),
-      }
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-Black.woff2') format('woff2'),
+         url('fonts/DAMOON-Black.woff') format('woff'),
+         url('fonts/DAMOON-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-ExtraBold.woff2') format('woff2'),
+         url('fonts/DAMOON-ExtraBold.woff') format('woff'),
+         url('fonts/DAMOON-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-Bold.woff2') format('woff2'),
+         url('fonts/DAMOON-Bold.woff') format('woff'),
+         url('fonts/DAMOON-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-SemiBold.woff2') format('woff2'),
+         url('fonts/DAMOON-SemiBold.woff') format('woff'),
+         url('fonts/DAMOON-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-Medium.woff2') format('woff2'),
+         url('fonts/DAMOON-Medium.woff') format('woff'),
+         url('fonts/DAMOON-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-Regular.woff2') format('woff2'),
+         url('fonts/DAMOON-Regular.woff') format('woff'),
+         url('fonts/DAMOON-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-Light.woff2') format('woff2'),
+         url('fonts/DAMOON-Light.woff') format('woff'),
+         url('fonts/DAMOON-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-ExtraLight.woff2') format('woff2'),
+         url('fonts/DAMOON-ExtraLight.woff') format('woff'),
+         url('fonts/DAMOON-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-Thin.woff2') format('woff2'),
+         url('fonts/DAMOON-Thin.woff') format('woff'),
+         url('fonts/DAMOON-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-HairLine.woff2') format('woff2'),
+         url('fonts/DAMOON-HairLine.woff') format('woff'),
+         url('fonts/DAMOON-HairLine.ttf') format('truetype');
+    font-weight: 50;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAMOON';
+    src: url('fonts/DAMOON-Heavy.woff2') format('woff2'),
+         url('fonts/DAMOON-Heavy.woff') format('woff'),
+         url('fonts/DAMOON-Heavy.ttf') format('truetype');
+    font-weight: 950;
+    font-style: normal;
+}
+
       :root {
             --primary: #0f162d;
             --accent: #c5a579;
@@ -348,111 +443,98 @@
 
                     <div class="section-divider my-8"></div>
 
-                    <!-- Skills Section -->
-                    <section class="mb-8">
-                        <div class="flex items-center mb-4 group">
-                            <h2 class="text-2xl font-SemiBold text-secondary border-b border-secondary pb-2 flex items-center">
-                                <i class="fas fa-star ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
-                                تخصص‌های حرفه‌ای
-                            </h2>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 card-hover">
-                                <div class="flex items-center mb-2">
-                                    <div class="w-10 h-10 flex items-center justify-center bg-secondary bg-opacity-20 rounded-full mr-3">
-                                        <i class="fas fa-palette text-secondary"></i>
-                                    </div>
-                                    <h3 class="font-semibold text-secondary">
-                                        طراح گرافیک
-                                    </h3>
-                                </div>
-                                <p class="text-gray-300 text-sm">
-                                    طراحی و خلق هویت بصری از ایده تا اجرا، با تمرکز بر زیبایی‌شناسی و انتقال پیام مؤثر.
-                                </p>
-                            </div>
-                            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 card-hover">
-                                <div class="flex items-center mb-2">
-                                    <div class="w-10 h-10 flex items-center justify-center bg-secondary bg-opacity-20 rounded-full mr-3">
-                                        <i class="fas fa-font text-secondary"></i>
-                                    </div>
-                                    <h3 class="font-semibold text-secondary">
-                                        طراح تایپ فیس
-                                    </h3>
-                                </div>
-                                <p class="text-gray-300 text-sm">
-                                    خلق فونت‌های منحصر به فرد با دقت در ساختار حروف، خوانایی و زیبایی‌شناسی.
-                                </p>
-                            </div>
-                            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 card-hover">
-                                <div class="flex items-center mb-2">
-                                    <div class="w-10 h-10 flex items-center justify-center bg-secondary bg-opacity-20 rounded-full mr-3">
-                                        <i class="fas fa-briefcase text-secondary"></i>
-                                    </div>
-                                    <h3 class="font-semibold text-secondary">
-                                        طراح هویت بصری
-                                    </h3>
-                                </div>
-                                <p class="text-gray-300 text-sm">
-                                    طراحی و توسعه هویت بصری برند با هماهنگی رنگ، فرم و فونت برای ایجاد یک تصویر یکپارچه.
-                                </p>
-                            </div>
-                            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 card-hover">
-                                <div class="flex items-center mb-2">
-                                    <div class="w-10 h-10 flex items-center justify-center bg-secondary bg-opacity-20 rounded-full mr-3">
-                                        <i class="fas fa-laptop text-secondary"></i>
-                                    </div>
-                                    <h3 class="font-semibold text-secondary">
-                                        طراح UI و UX
-                                    </h3>
-                                </div>
-                                <p class="text-gray-300 text-sm">
-                                    طراحی تجربه و رابط کاربری از مفهوم تا اجرا، با تمرکز بر عملکرد، زیبایی‌شناسی و کاربرپسندی.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="section-divider my-8"></div>
-
-<!-- Experience Section -->
+                    <!-- بخش مهارت‌ها -->
 <section class="mb-8">
     <div class="flex items-center mb-4 group">
         <h2 class="text-2xl font-SemiBold text-secondary border-b border-secondary pb-2 flex items-center">
-            <i class="fas fa-briefcase ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
-            تجربیات حرفه‌ای
+            <i class="fas fa-star ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
+            تخصص‌های حرفه‌ای
         </h2>
     </div>
-    <div class="space-y-6">
-        <div class="timeline-item pl-6">
-            <div class="timeline-dot"></div>
-            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
-                <h3 class="font-semibold text-secondary">طراح تایپ فیس و تایپوگرافی</h3>
-                <p class="text-gray-300 text-sm">
-                    طراحی و توسعه فونت‌های اختصاصی فارسی و عربی، با تمرکز بر خوانایی و زیبایی‌شناسی و تبدیل تایپ به زبان بصری.
-                </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- کارت طراح گرافیک -->
+        <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 card-hover relative">
+            <div class="absolute top-3 right-3 w-10 h-10 flex items-center justify-center bg-secondary bg-opacity-20 rounded-full">
+                <i class="fas fa-palette text-secondary"></i>
             </div>
+            <h3 class="font-semibold text-secondary mt-12">
+                طراح گرافیک
+            </h3>
+            <p class="text-gray-300 text-sm">
+                طراحی و خلق هویت بصری از ایده تا اجرا، با تمرکز بر زیبایی‌شناسی و انتقال پیام مؤثر.
+            </p>
         </div>
-        <div class="timeline-item pl-6">
-            <div class="timeline-dot"></div>
-            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
-                <h3 class="font-semibold text-secondary">طراح هویت بصری</h3>
-                <p class="text-gray-300 text-sm">
-                    طراحی هویت بصری برندها و ایجاد سیستم‌های گرافیکی یکپارچه که به‌طور هماهنگ رنگ، فرم، صدا و ساختار ارتباطی را در بر می‌گیرد.
-                </p>
+        <!-- کارت طراح تایپ فیس -->
+        <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 card-hover relative">
+            <div class="absolute top-3 right-3 w-10 h-10 flex items-center justify-center bg-secondary bg-opacity-20 rounded-full">
+                <i class="fas fa-font text-secondary"></i>
             </div>
+            <h3 class="font-semibold text-secondary mt-12">
+                طراح تایپ فیس
+            </h3>
+            <p class="text-gray-300 text-sm">
+                خلق فونت‌های منحصر به فرد با دقت در ساختار حروف، خوانایی و زیبایی‌شناسی.
+            </p>
         </div>
-        <div class="timeline-item pl-6">
-            <div class="timeline-dot"></div>
-            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
-                <h3 class="font-semibold text-secondary">طراح ui ,ux</h3>
-                <p class="text-gray-300 text-sm">
-                    طراحی رابط کاربری و تجربه کاربری برای وب‌سایت‌ها و برنامه‌های دیجیتال، با تمرکز بر طراحی کاربرپسند و ایجاد جریان‌های تعاملی بهینه.
-                </p>
+        <!-- کارت طراح هویت بصری -->
+        <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 card-hover relative">
+            <div class="absolute top-3 right-3 w-10 h-10 flex items-center justify-center bg-secondary bg-opacity-20 rounded-full">
+                <i class="fas fa-briefcase text-secondary"></i>
             </div>
+            <h3 class="font-semibold text-secondary mt-12">
+                طراح هویت بصری
+            </h3>
+            <p class="text-gray-300 text-sm">
+                طراحی و توسعه هویت بصری برند با هماهنگی رنگ، فرم و فونت برای ایجاد یک تصویر یکپارچه.
+            </p>
+        </div>
+        <!-- کارت طراح UI و UX -->
+        <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 card-hover relative">
+            <div class="absolute top-3 right-3 w-10 h-10 flex items-center justify-center bg-secondary bg-opacity-20 rounded-full">
+                <i class="fas fa-laptop text-secondary"></i>
+            </div>
+            <h3 class="font-semibold text-secondary mt-12">
+                طراح UI و UX
+            </h3>
+            <p class="text-gray-300 text-sm">
+                طراحی تجربه و رابط کاربری از مفهوم تا اجرا، با تمرکز بر عملکرد، زیبایی‌شناسی و کاربرپسندی.
+            </p>
         </div>
     </div>
 </section>
 
+
+                    <div class="section-divider my-8"></div>
+
+                    <!-- Experience Section -->
+                    <section class="mb-8">
+                        <div class="flex items-center mb-4 group">
+                            <h2 class="text-2xl font-SemiBold text-secondary border-b border-secondary pb-2 flex items-center">
+                                <i class="fas fa-briefcase ml-2 transition-transform duration-500 group-hover:rotate-12"></i>
+                                تجربیات حرفه‌ای
+                            </h2>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="timeline-item pl-6">
+                                <div class="timeline-dot"></div>
+                                <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
+                                    <h3 class="font-semibold text-secondary">طراح تایپ فیس</h3>
+                                    <p class="text-gray-300 text-sm">
+                                        طراحی و توسعه فونت‌های اختصاصی فارسی و لاتین با تمرکز بر خوانایی و زیبایی‌شناسی.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item pl-6">
+                                <div class="timeline-dot"></div>
+                                <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg border border-gray-700 hover:border-secondary transition-all duration-300 transform hover:-translate-x-1">
+                                    <h3 class="font-semibold text-secondary">طراح UI/UX</h3>
+                                    <p class="text-gray-300 text-sm">
+                                        طراحی رابط کاربری و تجربه کاربری برای وب. تمرکز بر طراحی کاربرپسندوایجاد جریان‌های تعاملی بهینه.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
